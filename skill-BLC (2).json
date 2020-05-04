@@ -1,0 +1,716 @@
+{
+  "intents": [
+    {
+      "intent": "internship",
+      "examples": [
+        {
+          "text": "𝐃𝐨'𝐬 𝐚𝐧𝐝 𝐃𝐨𝐧'𝐭𝐬 𝐨𝐟 𝐑𝐞𝐬𝐮𝐦𝐞𝐬"
+        },
+        {
+          "text": "career fairs"
+        },
+        {
+          "text": "𝐇𝐨𝐰 𝐝𝐨 𝐲𝐨𝐮 𝐬𝐭𝐚𝐧𝐝 𝐨𝐮𝐭 𝐚𝐭 𝐜𝐚𝐫𝐞𝐞𝐫 𝐟𝐚𝐢𝐫𝐬/𝐧𝐞𝐭𝐰𝐨𝐫𝐤𝐢𝐧𝐠 𝐞𝐯𝐞𝐧𝐭𝐬?"
+        }
+      ]
+    },
+    {
+      "intent": "Resources",
+      "examples": [
+        {
+          "text": "career"
+        },
+        {
+          "text": "Catalog"
+        },
+        {
+          "text": "career resources"
+        },
+        {
+          "text": "resources"
+        },
+        {
+          "text": "resource"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "LinkedIn",
+      "examples": [
+        {
+          "text": "LinkedIn"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greeting",
+      "examples": [
+        {
+          "text": "wossup"
+        },
+        {
+          "text": "good afternoon"
+        },
+        {
+          "text": "good morning"
+        },
+        {
+          "text": "hey"
+        },
+        {
+          "text": "hi"
+        },
+        {
+          "text": "yoo"
+        }
+      ]
+    },
+    {
+      "intent": "VideoSeries",
+      "examples": [
+        {
+          "text": "Videoseries"
+        },
+        {
+          "text": "Video"
+        },
+        {
+          "text": "series"
+        }
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "entity": "sys-person",
+      "values": [],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Internship",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "𝐃𝐨'𝐬 𝐚𝐧𝐝 𝐃𝐨𝐧'𝐭𝐬 𝐨𝐟 𝐑𝐞𝐬𝐮𝐦𝐞𝐬",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "𝐇𝐨𝐰 𝐝𝐨 𝐲𝐨𝐮 𝐬𝐭𝐚𝐧𝐝 𝐨𝐮𝐭 𝐚𝐭 𝐜𝐚𝐫𝐞𝐞𝐫 𝐟𝐚𝐢𝐫s",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "S𝐭𝐚𝐧𝐝ing 𝐨𝐮𝐭 at 𝐧𝐞𝐭𝐰𝐨𝐫𝐤𝐢𝐧𝐠 𝐞𝐯𝐞𝐧𝐭𝐬",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "LinkedIn",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "How to Create a Custom URL",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "How To Post on LinkedIn",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "How To Set Your Profile",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Starting conversation with Recruiter",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_7_1575431351387",
+      "disabled": true,
+      "conditions": "anything_else",
+      "dialog_node": "response_9_1577375415071",
+      "previous_sibling": "response_3_1577375411372"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "source": "https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/11/07100724/linkedin-700x410.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "https://drive.google.com/open?id=1M3VkLU-FUXissIscikJdVM21YFq5R-A5 How to post on LinkedIn "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/07/job-seeker-760x400.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": " <a href=\"https://drive.google.com/open?id=1FYyNrvkixfOfDV6Yh1FmMmeSyjAIrsPj\"> How to set an all star profile on LinkedIn </a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_7_1575431351387",
+      "disabled": true,
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_3_1577375411372"
+    },
+    {
+      "type": "standard",
+      "title": "P2",
+      "output": {
+        "generic": [
+          {
+            "source": "https://ch0styu58r-flywheel.netdna-ssl.com/wp-content/uploads/2019/05/Artboard-8.png",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "Communities to Join "
+              },
+              {
+                "text": " <a href=\"https://www.facebook.com/groups/MentorsMentees/ \">Mentors & Mentees</a>"
+              },
+              {
+                "text": " <a href=\"https://www.facebook.com/groups/bloominglastingcareers/ \">Blooming Lasting Careers</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://s3-us-west-1.amazonaws.com/5mt.crosspointmodesto.org/2016/12/StarttoFollowWebGraphic-768x432.png",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "People and Brands to Follow "
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/in/blessing-adogame/  \">Blessing Adogame</a>\n"
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/in/justindzuynguyen/ \">Justin Nguyen</a>"
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/in/timsalau/\">Tim (Mr. Future of Work) Salau</a>"
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/in/jonathanmjavier/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAABTrYN0B3aZjZg2jYZ93-1jRLsJSlUNyojA\">Jonathan Javier</a>"
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/in/johnrmarty/?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAALioR0BGmY_geiIZYEGnh2M9LEAx5m4LUk\">John Marty</a>"
+              },
+              {
+                "text": " <a href=\"https://www.instagram.com/young.gifted.nondominant/\">Young Gifted Nondominant</a>\n"
+              },
+              {
+                "text": " <a href=\"https://www.instagram.com/learnblademy/\">Blademy</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_8_1575410598917",
+      "conditions": "#Resources",
+      "dialog_node": "node_5_1575580318599",
+      "previous_sibling": "node_10_1575509458138"
+    },
+    {
+      "type": "standard",
+      "title": "Articles and Podcast",
+      "output": {
+        "generic": [
+          {
+            "source": "https://bendodson.s3.amazonaws.com/weblog/2015/pocket-rocket.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "Articles "
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/pulse/21-go-getter-student-job-search-hacks-actually-work-2018-nikolova\">21 Go-Getter Student Job Search Hacks that Actually Work </a>\n "
+              },
+              {
+                "text": "  <a href=\"https://www.linkedin.com/pulse/how-get-job-big-tech-microsoft-google-facebook-amazon-tim-salau/\">How to Get a Job in BIG Tech: Microsoft, Google, Facebook, and Amazon.</a>"
+              },
+              {
+                "text": "<a href=\"https://www.linkedin.com/pulse/your-career-circle-path-tim-salau/\">Your Career is a Circle, Not a Path.</a>"
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/pulse/millennial-lessons-from-being-rejected-linkedin-big-4-jonathan-javier/\">Millennial Lessons from Being Rejected by LinkedIn, the Big 4, Goldman Sachs, and More </a>"
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/posts/activity-6567058129970966528-dESE\">How  do you get into a top tech company after graduating </a>"
+              },
+              {
+                "text": " <a href=\"https://www.linkedin.com/posts/activity-6518501158359830528-D9Ia\">How to write personal invite on LinkedIn</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://www.eschoolnews.com/files/2017/06/podcast2-600x400.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "Podcast"
+              },
+              {
+                "text": " <a href=\"https://podcasts.apple.com/us/podcast/learn-educate-discover/id1049159321\">Learn Educate Discover</a>"
+              },
+              {
+                "text": " <a href=\"https://podcasts.apple.com/us/podcast/career-talk-learn-grow-thrive/id1141754534\">Career Talk: Learn - Grow - Thrive</a>"
+              },
+              {
+                "text": " <a href=\"https://podcasts.apple.com/us/podcast/young-and-d-u-m-b-the-millennial-gen-z-journey-to-success/id1260444260\">The GetChoGrindUp Podcast: The Next Generation Of Leaders </a>"
+              },
+              {
+                "text": " <a href=\"https://podcasts.apple.com/us/podcast/the-future-of-work-podcast-with-jacob-morgan/id907990904\">The Future of Work Podcast With Jacob Morgan</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_8_1575410598917",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "condition",
+        "dialog_node": "node_5_1575580318599"
+      },
+      "conditions": "#Resources",
+      "dialog_node": "node_10_1575509458138"
+    },
+    {
+      "type": "standard",
+      "title": "P2",
+      "output": {
+        "generic": [
+          {
+            "source": "https://www.socialflyny.com/wp-content/uploads/2016/12/20152F092F012Fa92FLinkedInmes.1b35b.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": " <a href=\"https://drive.google.com/open?id=1-tDx6StQ3ZAVtWJ8D2yhShqAi23--NUa\"> Conversation Starters with Professionals and Recruiters </a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://www.alpinesbsolutions.com/wp-content/uploads/2017/08/Your-LinkedIn-Personal-Branding-Strategy-Guide-624x357.png",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": " <a href=\"https://bit.ly/2LixS9G\"> Building a Personal Branding on LinkedIn </a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_3_1575343709353",
+      "conditions": "#LinkedIn",
+      "dialog_node": "node_1_1575431429642",
+      "previous_sibling": "node_7_1575431351387"
+    },
+    {
+      "type": "standard",
+      "title": "Part 1",
+      "output": {
+        "generic": [
+          {
+            "source": "https://s3.amazonaws.com/media.eremedia.com/wp-content/uploads/2018/11/07100724/linkedin-700x410.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": " <a href=\"https://drive.google.com/open?id=1M3VkLU-FUXissIscikJdVM21YFq5R-A5\"> How to post on LinkedIn </a>\n"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://contenthub-static.grammarly.com/blog/wp-content/uploads/2017/07/job-seeker-760x400.jpg",
+            "description": "",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<a href=\"https://drive.google.com/open?id=1FYyNrvkixfOfDV6Yh1FmMmeSyjAIrsPj\"> How to build a LinkedIn Profile </a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1575343709353",
+      "metadata": {
+        "callout": {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "": ""
+          },
+          "result_variable": "webhook_result_1"
+        },
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_1_1575431429642"
+      },
+      "conditions": "#LinkedIn",
+      "dialog_node": "node_7_1575431351387"
+    },
+    {
+      "type": "standard",
+      "title": "P2",
+      "output": {
+        "generic": [
+          {
+            "title": "",
+            "source": "https://www.jevshumanservices.org/wp-content/uploads/2017/07/101.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "Career Strategies from Experts in the Field \n "
+              },
+              {
+                "text": " <a href=\"https://drive.google.com/file/d/1Zm-Njlts5pmkUwAxYT9M27iggJqqdiJG/view\">How to Network with Recruiter and Professionals by Jonathan </a>"
+              },
+              {
+                "text": " <a href=\"https://drive.google.com/file/d/1svAwHhsycmxaTlDL1hGZqQIHNdxyDU01/view\">How to Secure an Internship by AJ</a>"
+              },
+              {
+                "text": " <a href=\"https://drive.google.com/file/d/1nStI7vm5lLQM_6HBrWMRxZ-CbfSBg7Ha/view\">What to do when rejected from an internship by Jonathan </a>"
+              },
+              {
+                "text": "<a href=\"https://drive.google.com/file/d/12YcKRfbgMuClVg3h3IzyzpP1zRWplRz1/view\">Maximazing your Internship Search by Jedi</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_7_1575410889898",
+      "conditions": "#VideoSeries",
+      "dialog_node": "node_10_1575433414293",
+      "previous_sibling": "node_5_1575433420500"
+    },
+    {
+      "type": "standard",
+      "title": "P1",
+      "output": {
+        "generic": [
+          {
+            "source": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrRfndclJLcCeKssNn46TpoWnCF-LV2HPTcKrFJFZbG5IJViu9wQ&s",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": " <a href=\"https://bit.ly/3804v65\">Career Booster : Facebook, Square, Twitter & Apple by YAAW</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "source": "https://www.nfpt.com/wp-content/uploads/36927004_s-300x231.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": " <a href=\"https://bit.ly/34Lipqs\">Strategies to Secure Internship by Anthony Mays(Google)</a>"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "node_7_1575410889898",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_10_1575433414293"
+      },
+      "conditions": "#VideoSeries",
+      "dialog_node": "node_5_1575433420500"
+    },
+    {
+      "type": "standard",
+      "title": "Goodbye",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Nice talking to you today."
+              },
+              {
+                "text": "Have a nice day."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1575341784702",
+      "conditions": "#goodbyes",
+      "dialog_node": "node_5_1575341911712",
+      "previous_sibling": "node_3_1575341981725"
+    },
+    {
+      "type": "standard",
+      "title": "Thank You",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "You're welcome. Please let me know if you need anything else."
+              },
+              {
+                "text": "I aim to please. 😊"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1575341784702",
+      "conditions": "#thankyou",
+      "dialog_node": "node_3_1575341981725",
+      "previous_sibling": "node_5_1575341832831"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings ",
+      "output": {
+        "generic": []
+      },
+      "parent": "node_2_1575341784702",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "#Greeting",
+      "dialog_node": "node_5_1575341832831"
+    },
+    {
+      "type": "folder",
+      "title": "Chitchat ",
+      "conditions": "",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1575341784702",
+      "previous_sibling": "node_8_1575410598917"
+    },
+    {
+      "type": "standard",
+      "title": "Video Series ",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#VideoSeries",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1575410889898",
+      "previous_sibling": "node_3_1575343709353"
+    },
+    {
+      "type": "standard",
+      "title": "LinkedIn Resources",
+      "output": {
+        "generic": []
+      },
+      "context": {},
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#LinkedIn",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1575343709353",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Resources",
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#Resources",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_8_1575410598917",
+      "previous_sibling": "node_7_1575410889898"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1575341784702",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hey there! I'm Skipper, a chatbot designed to help you advance your career. Get started by typing in the sections you want to explore below."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "LinkedIn ",
+            "source": "https://i0.wp.com/catchupdates.com/wp-content/uploads/2019/01/Using-Linkedin-Profile-to-promote-business-FI.jpg?fit=659%2C300&ssl=1",
+            "description": "Learn key strategies to create an all-star profile, amplify your content reach, and connect with recruiters",
+            "response_type": "image"
+          },
+          {
+            "title": "Video Series",
+            "source": "https://www.careercake.com/media/local/frontend/images/facebook.png?v=2",
+            "description": "Watch short clips of professionals in various industries sharing insightful career advice",
+            "response_type": "image"
+          },
+          {
+            "title": "Catalog",
+            "source": "https://dop60w6vsknh5.cloudfront.net/wp-content/uploads/2017/04/career_resources-1024x460.jpg",
+            "description": "Find relevant communities to join, key career experts to follow, career-related articles and podcasts in this repository",
+            "response_type": "image"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    },
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": ""
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "BLC",
+  "language": "en",
+  "description": ""
+}
